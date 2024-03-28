@@ -84,7 +84,11 @@ function AddContact() {
           className="inp"
           name="contact"
         />
-        <button type="submit" disabled={status === "success"}>
+        <button
+          type="submit"
+          disabled={status === "success"}
+          style={{ padding: "20px 103px" }}
+        >
           Отправить
         </button>
       </form>
