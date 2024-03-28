@@ -45,13 +45,14 @@ function Vendors() {
   <input type="text" class="find" />;
   console.log(vendorList);
   return (
-    <div className="main" style={{ marginLeft: "10px", marginRight: "10px" }}>
+    <div className="main">
       <img className="logo" src="logo.png" />
       <h2>Список поставщики</h2>
       <div className="findBlock">
         <input
           type="text"
           className="find"
+          style={{ width: "100%" }}
           onChange={(e) => {
             axios
               .get(

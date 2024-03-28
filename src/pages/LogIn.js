@@ -16,16 +16,17 @@ function LogIn() {
         localStorage.setItem("login1", response.data.user.login);
         localStorage.setItem("token1", response.data.result);
         navigate("/vendors");
+        return;
       })
       .catch((error) => {
-        console.error(error);
+        console.warn(error);
         alert("Ошибка");
       });
   };
 
   return (
     <>
-      <div class="main" style={{ marginLeft: "10px" }}>
+      <div class="main">
         <img class="logo" src="logo.png" />
         <h2>Авторизация</h2>
         <form onSubmit={save}>
