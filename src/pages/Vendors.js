@@ -45,7 +45,7 @@ function Vendors() {
   <input type="text" class="find" />;
   console.log(vendorList);
   return (
-    <div className="main">
+    <div className="main" style={{ marginLeft: "10px", marginRight: "10px" }}>
       <img className="logo" src="logo.png" />
       <h2>Список поставщики</h2>
       <div className="findBlock">
