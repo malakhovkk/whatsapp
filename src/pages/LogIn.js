@@ -52,7 +52,9 @@ function LogIn() {
               setFInfo({ ...FInfo, [e.target.name]: e.target.value })
             }
           />
-          <button type="submit">Войти</button>
+          <button type="submit" style={{ padding: "20px 124px" }}>
+            Войти
+          </button>
         </form>
       </div>
     </>
