@@ -32,7 +32,7 @@ function Contacts() {
   }, []);
   const navigate = useNavigate();
   return (
-    <div class="main" style={{ marginLeft: "10px" }}>
+    <div class="main">
       <img class="logo" src="logo.png" />
       <div
         class="back"

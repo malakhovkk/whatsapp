@@ -53,6 +53,7 @@ function Vendors() {
           type="text"
           className="find"
           style={{ width: "100%" }}
+          // onMouseDown={(e) => e.preventDefault()}
           onChange={(e) => {
             axios
               .get(
