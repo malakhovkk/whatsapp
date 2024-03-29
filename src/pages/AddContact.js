@@ -87,7 +87,7 @@ function AddContact() {
         <button
           type="submit"
           disabled={status === "success"}
-          style={{ padding: "20px 104px" }}
+          style={{ padding: "20px 103px" }}
         >
           Отправить
         </button>
