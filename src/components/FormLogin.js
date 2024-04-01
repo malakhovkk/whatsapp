@@ -28,28 +28,8 @@ export const FormLogin = () => {
     <form onSubmit={save}>
       <h3>Логин</h3>
       <InputLogin type="text" name="login" place="Введите логин" />
-      <InputLogin type="password" name="password" place="Введите пароль" />
-      {/* <input
-        type="text"
-        name="login"
-        class="inp"
-        placeholder="Введите логин"
-        value={FInfo.login}
-        onChange={(e) =>
-          setFInfo({ ...FInfo, [e.target.name]: e.target.value })
-        }
-      />
       <h3>Пароль</h3>
-      <input
-        type="password"
-        name="password"
-        placeholder="Введите пароль"
-        class="inp"
-        value={FInfo.password}
-        onChange={(e) =>
-          setFInfo({ ...FInfo, [e.target.name]: e.target.value })
-        }
-      /> */}
+      <InputLogin type="password" name="password" place="Введите пароль" />
       <button type="submit" style={{ padding: "20px 124px" }}>
         Войти
       </button>
