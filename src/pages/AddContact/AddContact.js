@@ -66,7 +66,7 @@ function AddContact() {
           type="text"
           name="name"
           className="inp"
-          placeholder="Введите логин"
+          placeholder="Введите полное имя"
         />
         <h3>Тип контакт</h3>
         <select name="contact" value={formData.type}>
@@ -78,6 +78,7 @@ function AddContact() {
         <h3>Контакт</h3>
         <input
           type="text"
+          placeholder="Введите контакт"
           onChange={(e) =>
             setFormData({ ...formData, [e.target.name]: e.target.value })
           }

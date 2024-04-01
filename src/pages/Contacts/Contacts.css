@@ -1,11 +1,11 @@
 @font-face {
   font-family: Source;
-  src: url(fonts/Inter-Medium.ttf);
+  src: url(../fonts/Inter-Medium.ttf);
   font-weight: bold;
 }
 @font-face {
   font-family: SourceL;
-  src: url(fonts/Inter-ExtraLight.ttf);
+  src: url(../fonts/Inter-ExtraLight.ttf);
 }
 body {
   font-family: Source;
@@ -107,14 +107,14 @@ body {
   margin-right: 10px;
   margin-top: 10px;
 }
-.vendor {
+/* .vendor {
   color: #323232;
 
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-}
+} */
 .right {
   position: relative;
 }

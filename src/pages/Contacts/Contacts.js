@@ -2,10 +2,11 @@ import { useState } from "react";
 import "./Contacts.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { useStore } from "../../store/store";
 function Contacts() {
   const [contactInfo, setContactInfo] = useState([]);
-
+  const { bears, increasePopulation, vendorList, updateVendorList } =
+    useStore();
   useState(() => {
     axios
       .get(
@@ -31,6 +32,7 @@ function Contacts() {
       .catch((el) => alert("Ошибка"));
   }, []);
   const navigate = useNavigate();
+  console.log(vendorList);
   return (
     <div class="main">
       <img class="logo" src="logo.png" />
@@ -68,42 +70,21 @@ function Contacts() {
             }, 0) === 11 && (
               <div
                 class="right"
-                onClick={() =>
-                  (window.location.href = `https://web.whatsapp.com/send?phone=${c.contact}&text=Привет! Пришли, пожалуйста, прайс-лист на наш сервис *https://vinopark.ru* %0aCпасибо`)
-                }
+                onClick={() => {
+                  console.log(
+                    `https://api.whatsapp.com/send?phone=${c.contact}&text=Привет! Пришли, пожалуйста, прайс-лист на наш сервис *https://vinopark.ru* %0aCпасибо`
+                  );
+                  window.location.href = `https://api.whatsapp.com/send?phone=${c.contact}&text=Привет! Пришли, пожалуйста, прайс-лист на наш сервис *https://vinopark.ru* %0aCпасибо`;
+                }}
               ></div>
             )}
         </div>
       ))}
-      {/* <div class="contact">
-        <div class="left">
-          <div class="name">Иванов Иван</div>
-          <div class="phone">+7 947 472-21-45</div>
-        </div>
-        <div class="right"></div>
-      </div>
-      <div class="contact">
-        <div class="left">
-          <div class="name">Кирилл Столяров</div>
-          <div class="phone">+7 965 869-20-42</div>
-        </div>
-        <div class="right"></div>
-      </div>
-      <div class="contact">
-        <div class="left">
-          <div class="name">Дима Маслов</div>
-          <div class="phone">+7 966 120-20-45</div>
-        </div>
-        <div class="right"></div>
-      </div>
-      <div class="contact">
-        <div class="left">
-          <div class="name">Анатолий Творов</div>
-          <div class="phone">+7 965 869-20-42</div>
-        </div>
-        <div class="right"></div>
-      </div> */}
-      <button class="add" onClick={() => navigate("../add-contact")}>
+      <button
+        class="add"
+        style={{ padding: "10px 125px" }}
+        onClick={() => navigate("../add-contact")}
+      >
         Добавить
       </button>
     </div>

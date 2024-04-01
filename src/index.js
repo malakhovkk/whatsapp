@@ -3,13 +3,13 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import LogIn from "./pages/LogIn";
+import LogIn from "./pages/LogIn/LogIn";
 import { RouterProvider } from "react-router-dom";
 import { createBrowserRouter } from "react-router-dom";
 import { createRoot } from "react-dom/client";
-import Vendors from "./pages/Vendors";
-import Contacts from "./pages/Contacts";
-import AddContact from "./pages/AddContact";
+import Vendors from "./pages/Vendors/Vendors";
+import Contacts from "./pages/Contacts/Contacts";
+import AddContact from "./pages/AddContact/AddContact";
 
 const router = createBrowserRouter([
   {
