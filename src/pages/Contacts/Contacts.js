@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useStore } from "../../store/store";
 function Contacts() {
   const [contactInfo, setContactInfo] = useState([]);
+  const navigate = useNavigate();
   const { bears, increasePopulation, vendorList, updateVendorList } =
     useStore();
   useState(() => {
@@ -29,9 +30,8 @@ function Contacts() {
           }))
         );
       })
-      .catch((el) => alert("Ошибка"));
+      .catch((el) => navigate("../"));
   }, []);
-  const navigate = useNavigate();
   console.log(vendorList);
   return (
     <div class="main">
@@ -69,13 +69,19 @@ function Contacts() {
               return 1 + acc;
             }, 0) === 11 && (
               <div
-                class="right"
+                className="right"
                 onClick={() => {
-                  console.log(
-                    `https://api.whatsapp.com/send?phone=${c.contact}&text=Привет! Пришли, пожалуйста, прайс-лист на наш сервис *https://vinopark.ru* %0aCпасибо`
-                  );
-                  window.location.href = `https://api.whatsapp.com/send?phone=${c.contact}&text=Привет! Пришли, пожалуйста, прайс-лист на наш сервис *https://vinopark.ru* %0aCпасибо`;
+                  //window.location.href = "google.com";
+                  window.location.href = `https://api.whatsapp.com/send?phone=${
+                    c.contact
+                  }&text=Привет! Пришли, пожалуйста, прайс-лист на наш сервис sku.vinopark.ru:55555/prices/UploadHtml?id=${localStorage.getItem(
+                    "vendorId"
+                  )}  %0aCпасибо`;
+                  console.log("FINISH");
                 }}
+                //https://194.87.239.231:55555/prices/UploadHtml?id=${localStorage.getItem(
+                //  "vendorId"
+                // )}"}
               ></div>
             )}
         </div>

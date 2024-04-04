@@ -36,6 +36,7 @@ function AddContact() {
       })
       .catch((err) => {
         setStatus("error");
+        navigate("../");
         setTimeout(() => {
           setStatus("");
         }, 2000);
@@ -49,7 +50,6 @@ function AddContact() {
       )}
       {status === "error" && <Alert severity="error">Произошла ошибка</Alert>}
       <img class="logo" src="logo.png" />
-      <h2>Добавление контакта</h2>
       <div
         class="back"
         style={{ cursor: "pointer" }}
@@ -57,6 +57,8 @@ function AddContact() {
       >
         Назад
       </div>
+      <h2>Добавление контакта</h2>
+
       <form onSubmit={save}>
         <h3>Полное имя</h3>
         <input
@@ -69,12 +71,18 @@ function AddContact() {
           placeholder="Введите полное имя"
         />
         <h3>Тип контакт</h3>
-        <select name="contact" value={formData.type}>
-          <option value="2">Телефон</option>
-          <option value="1">Почта</option>
-          <option value="3">Никнейм</option>
-        </select>
-
+        <div className="contactBlock">
+          <select
+            name="contact"
+            value={formData.type}
+            onChange={(e) =>
+              setFormData({ ...formData, [e.target.name]: e.target.value })
+            }
+          >
+            <option value="2">Телефон</option>
+            <option value="1">Почта</option>
+          </select>
+        </div>
         <h3>Контакт</h3>
         <input
           type="text"

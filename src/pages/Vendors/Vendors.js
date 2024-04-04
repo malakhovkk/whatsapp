@@ -15,7 +15,15 @@ function Vendors() {
   return (
     <div className="main">
       <img className="logo" src="logo.png" />
+      <div
+        class="back"
+        style={{ cursor: "pointer" }}
+        onClick={() => navigate("../")}
+      >
+        Назад
+      </div>
       <h2>Список поставщики</h2>
+
       <SearchText />
       <VendorList />
     </div>
